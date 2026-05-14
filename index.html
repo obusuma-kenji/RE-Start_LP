@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>つまずいてもリスタートできる社会の設計図 ─ 若者雇用と社労士の新たな役割</title>
+<meta name="description" content="一般社団法人コンパスナビ × 埼玉県社会保険労務士会熊谷支部｜若者が何度でもやり直せる社会をつくる、伴走型支援の研修ドキュメント">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1a1a1a;
+  --paper:#f5f0e8;
+  --paper-dark:#e8e0d0;
+  --accent:#c4501a;
+  --accent-light:#e8734a;
+  --blue-dark:#1c2d3f;
+  --blue-mid:#2a4a6b;
+  --gray-warm:#6b6259;
+  --gray-light:#9a9189;
+  --white-warm:#faf7f2;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.9;overflow-x:hidden;
+}
+/* grain */
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.5;
+}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  background:linear-gradient(170deg,var(--blue-dark) 0%,#0d1b2a 60%,#0a0f15 100%);
+  overflow:hidden;padding:2rem;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% 40%,rgba(196,80,26,0.12) 0%,transparent 70%);
+}
+.hero-badge{
+  position:relative;z-index:2;display:inline-block;
+  border:1px solid rgba(255,255,255,0.25);padding:0.4rem 1.6rem;
+  font-size:0.72rem;letter-spacing:0.3em;color:rgba(255,255,255,0.7);
+  margin-bottom:2rem;animation:fadeUp 1s ease .3s both;
+}
+.hero-title{
+  position:relative;z-index:2;
+  font-family:'Shippori Mincho','Noto Serif JP',serif;font-weight:800;
+  font-size:clamp(2rem,5vw,4rem);color:#fff;text-align:center;
+  line-height:1.5;letter-spacing:.05em;animation:fadeUp 1.2s ease .5s both;max-width:900px;
+}
+.hero-title em{font-style:normal;color:var(--accent-light)}
+.hero-sub{
+  position:relative;z-index:2;font-family:'Noto Serif JP',serif;
+  font-size:clamp(.9rem,2vw,1.2rem);color:rgba(255,255,255,0.65);
+  text-align:center;margin-top:1.5rem;max-width:700px;line-height:2;
+  animation:fadeUp 1.2s ease .8s both;
+}
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;
+  color:rgba(255,255,255,0.4);font-size:.7rem;letter-spacing:.2em;text-align:center;
+  animation:pulse 2s infinite;
+}
+.hero-scroll::after{
+  content:'';display:block;width:1px;height:40px;
+  background:rgba(255,255,255,0.3);margin:.5rem auto 0;
+}
+
+/* ─── SECTION ─── */
+.section{padding:6rem 2rem;max-width:900px;margin:0 auto}
+.section-label{
+  font-size:.65rem;letter-spacing:.4em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:.8rem;font-weight:500;
+}
+.section-heading{
+  font-family:'Shippori Mincho','Noto Serif JP',serif;font-weight:800;
+  font-size:clamp(1.5rem,3.5vw,2.4rem);line-height:1.6;color:var(--ink);
+  margin-bottom:2rem;letter-spacing:.03em;
+}
+.section-body{font-size:1rem;line-height:2.2;color:var(--gray-warm);font-weight:300}
+.section-body strong{color:var(--ink);font-weight:500}
+
+/* ─── DIVIDER ─── */
+.divider{text-align:center;padding:3rem 0}
+.divider span{display:inline-block;width:60px;height:1px;background:var(--accent);opacity:.4}
+
+/* ─── FULL IMAGE ─── */
+.full-image-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 2rem}
+.full-image-wrap img{width:100%;display:block;border-radius:2px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.image-caption{
+  font-size:.75rem;color:var(--gray-light);text-align:right;
+  margin-top:.8rem;letter-spacing:.05em;
+}
+
+/* ─── QUOTE ─── */
+.quote-block{background:var(--blue-dark);padding:5rem 2rem;text-align:center;position:relative}
+.quote-block::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(196,80,26,.08) 0%,transparent 100%)}
+.quote-text{
+  position:relative;z-index:1;font-family:'Shippori Mincho',serif;
+  font-size:clamp(1.2rem,3vw,1.8rem);color:#fff;line-height:2;
+  max-width:750px;margin:0 auto;letter-spacing:.05em;
+}
+.quote-attr{position:relative;z-index:1;font-size:.8rem;color:rgba(255,255,255,.5);margin-top:1.5rem;letter-spacing:.1em}
+
+/* ─── PDF EMBED ─── */
+.pdf-section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.pdf-section.dark-bg{background:var(--blue-dark);max-width:100%;padding-left:0;padding-right:0}
+.pdf-section.dark-bg .pdf-inner{max-width:1100px;margin:0 auto;padding:0 2rem}
+.pdf-section.dark-bg .section-label{color:var(--accent-light)}
+.pdf-section.dark-bg .section-heading{color:#fff}
+.pdf-embed{
+  margin-top:2rem;border-radius:4px;overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.2);
+  background:#333;
+}
+.pdf-embed iframe{
+  width:100%;height:80vh;min-height:500px;border:none;display:block;
+}
+
+/* ─── ICEBERG ─── */
+.iceberg-section{background:linear-gradient(180deg,var(--paper) 0%,var(--paper-dark) 100%);padding:6rem 2rem}
+.iceberg-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.iceberg-surface,.iceberg-deep{padding:2rem;border-radius:3px}
+.iceberg-surface{background:#fff;border-left:3px solid var(--gray-light)}
+.iceberg-deep{background:var(--blue-dark);color:#fff;border-left:3px solid var(--accent)}
+.iceberg-label{font-size:.7rem;letter-spacing:.3em;margin-bottom:1rem;opacity:.6;font-weight:500}
+.iceberg-deep .iceberg-label{color:var(--accent-light);opacity:1}
+.iceberg-list{list-style:none;font-size:.95rem;line-height:2.2}
+.iceberg-list li::before{content:'─ ';opacity:.4}
+
+/* ─── PARADIGM ─── */
+.paradigm{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;max-width:900px;margin:3rem auto 0}
+.paradigm-card{padding:2rem;border-radius:3px;text-align:center}
+.paradigm-old{background:#fff;border:1px solid #ddd}
+.paradigm-new{background:var(--blue-dark);color:#fff}
+.paradigm-arrow{font-size:2rem;color:var(--accent);text-align:center}
+.paradigm-title{font-family:'Shippori Mincho',serif;font-size:1.1rem;font-weight:700;margin-bottom:1rem}
+.paradigm-desc{font-size:.85rem;line-height:1.9;opacity:.8}
+
+/* ─── PILLARS ─── */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:900px;margin:3rem auto 0}
+.pillar{background:#fff;padding:2rem 1.5rem;border-top:3px solid var(--accent);border-radius:0 0 3px 3px}
+.pillar-num{font-family:'Shippori Mincho',serif;font-size:2rem;color:var(--accent);font-weight:700;margin-bottom:.5rem}
+.pillar-title{font-family:'Shippori Mincho',serif;font-size:1rem;font-weight:700;margin-bottom:1rem;line-height:1.6}
+.pillar-text{font-size:.85rem;line-height:2;color:var(--gray-warm)}
+
+/* ─── VIDEO ─── */
+.video-section{background:var(--blue-dark);padding:6rem 2rem;text-align:center}
+.video-section .section-label{color:var(--accent-light)}
+.video-section .section-heading{color:#fff}
+.video-wrap{max-width:800px;margin:2rem auto 0}
+.video-wrap video{width:100%;border-radius:3px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.audio-wrap{max-width:600px;margin:2rem auto 0}
+.audio-wrap audio{width:100%}
+.audio-label{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.5rem;letter-spacing:.1em}
+
+/* ─── FOOD INFRA ─── */
+.food-hero{
+  position:relative;background:#0a0a0a;padding:0;overflow:hidden;
+  min-height:60vh;display:flex;align-items:center;justify-content:center;
+}
+.food-hero-inner{
+  position:relative;z-index:2;text-align:center;padding:5rem 2rem;
+  max-width:800px;
+}
+.food-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(180,130,50,0.15) 0%,transparent 70%);
+}
+.food-hero-title{
+  font-family:'Shippori Mincho',serif;font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:800;color:#fff;line-height:1.6;letter-spacing:.05em;margin-bottom:1rem;
+}
+.food-hero-title em{font-style:normal;color:#d4a44a}
+.food-hero-sub{
+  font-size:clamp(.9rem,2vw,1.15rem);color:rgba(255,255,255,.6);line-height:2;
+}
+
+.food-flow{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+  max-width:900px;margin:3rem auto 0;
+}
+.food-step{
+  background:rgba(255,255,255,.06);border:1px solid rgba(212,164,74,.25);
+  border-radius:3px;padding:2rem 1.5rem;text-align:center;
+}
+.food-step-num{
+  font-family:'Shippori Mincho',serif;font-size:.75rem;
+  color:#d4a44a;letter-spacing:.3em;margin-bottom:.8rem;
+}
+.food-step-title{
+  font-family:'Shippori Mincho',serif;font-size:1.1rem;
+  font-weight:700;color:#fff;margin-bottom:.8rem;line-height:1.5;
+}
+.food-step-text{font-size:.85rem;line-height:2;color:rgba(255,255,255,.6)}
+
+.path-section{background:var(--paper-dark);padding:6rem 2rem}
+.path-grid{
+  max-width:900px;margin:0 auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:0;
+}
+.path-card{padding:2.5rem;position:relative}
+.path-a{background:#2a1a1a;color:#fff;border-radius:3px 0 0 3px}
+.path-b{background:#1a2a1a;color:#fff;border-radius:0 3px 3px 0}
+.path-label{
+  font-size:.65rem;letter-spacing:.4em;margin-bottom:1rem;
+  font-weight:500;
+}
+.path-a .path-label{color:#e05555}
+.path-b .path-label{color:#55c07a}
+.path-title{
+  font-family:'Shippori Mincho',serif;font-size:1.2rem;
+  font-weight:700;margin-bottom:1.2rem;line-height:1.5;
+}
+.path-flow{list-style:none;font-size:.9rem;line-height:2.2}
+.path-flow li{position:relative;padding-left:1.5rem}
+.path-a .path-flow li::before{content:'→ ';position:absolute;left:0;color:#e05555}
+.path-b .path-flow li::before{content:'→ ';position:absolute;left:0;color:#55c07a}
+
+.pyramid-section{background:var(--blue-dark);padding:6rem 2rem;text-align:center}
+.pyramid-section .section-label{color:#d4a44a}
+.pyramid-section .section-heading{color:#fff}
+.pyramid{
+  max-width:600px;margin:3rem auto 0;
+}
+.pyramid-tier{
+  padding:1.5rem 2rem;text-align:center;margin:0 auto;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.pyramid-tier:nth-child(1){background:rgba(255,255,255,.1);max-width:350px;border-radius:3px 3px 0 0}
+.pyramid-tier:nth-child(2){background:rgba(255,255,255,.07);max-width:450px}
+.pyramid-tier:nth-child(3){background:rgba(212,164,74,.15);max-width:550px;border-radius:0 0 3px 3px;border:1px solid rgba(212,164,74,.3);border-top:0}
+.pyramid-tier-label{font-size:.65rem;letter-spacing:.3em;color:rgba(255,255,255,.5);margin-bottom:.3rem}
+.pyramid-tier:nth-child(3) .pyramid-tier-label{color:#d4a44a}
+.pyramid-tier-name{font-family:'Shippori Mincho',serif;font-size:1.1rem;font-weight:700;color:#fff}
+.pyramid-tier-desc{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.3rem}
+
+.sop-section{background:var(--paper);padding:6rem 2rem}
+.sop-grid{
+  max-width:900px;margin:3rem auto 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+}
+.sop-card{background:#fff;padding:2rem 1.5rem;border-radius:3px;border-left:3px solid var(--blue-mid)}
+.sop-num{font-family:'Shippori Mincho',serif;font-size:.8rem;color:var(--blue-mid);letter-spacing:.2em;margin-bottom:.5rem}
+.sop-title{font-family:'Shippori Mincho',serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;line-height:1.5}
+.sop-text{font-size:.85rem;line-height:2;color:var(--gray-warm)}
+
+/* ─── ECOSYSTEM ─── */
+.ecosystem{background:var(--paper);padding:6rem 2rem}
+.eco-triangle{max-width:600px;margin:3rem auto 0;text-align:center}
+.eco-node{display:inline-block;padding:1rem 2rem;font-family:'Shippori Mincho',serif;font-weight:700;font-size:1.1rem;border-radius:3px;margin:.5rem}
+.eco-top{background:var(--blue-dark);color:#fff}
+.eco-left{background:var(--accent);color:#fff}
+.eco-right{background:#fff;border:2px solid var(--blue-dark);color:var(--blue-dark)}
+.eco-center{font-family:'Shippori Mincho',serif;font-size:1.5rem;font-weight:800;color:var(--accent);margin:2rem 0}
+
+/* ─── CTA ─── */
+.cta-section{
+  background:linear-gradient(170deg,var(--blue-dark) 0%,#0d1b2a 100%);
+  padding:6rem 2rem;text-align:center;position:relative;
+}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 60%,rgba(196,80,26,.1) 0%,transparent 70%)}
+.cta-heading{
+  position:relative;z-index:1;font-family:'Shippori Mincho',serif;
+  font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;color:#fff;
+  line-height:1.7;letter-spacing:.05em;margin-bottom:1.5rem;
+}
+.cta-sub{position:relative;z-index:1;font-size:1rem;color:rgba(255,255,255,.6);line-height:2;max-width:600px;margin:0 auto 2rem}
+.cta-org{position:relative;z-index:1;font-family:'Shippori Mincho',serif;font-size:1.1rem;color:rgba(255,255,255,.8);letter-spacing:.1em}
+.cta-org small{display:block;font-family:'Noto Sans JP',sans-serif;font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.5rem;letter-spacing:.05em}
+
+/* ─── FOOTER ─── */
+footer{background:#0a0f15;padding:2rem;text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.1em}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:.8}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .iceberg-grid{grid-template-columns:1fr}
+  .paradigm{grid-template-columns:1fr;text-align:center}
+  .paradigm-arrow{transform:rotate(90deg)}
+  .pillars{grid-template-columns:1fr}
+  .food-flow{grid-template-columns:1fr}
+  .path-grid{grid-template-columns:1fr}
+  .path-a{border-radius:3px 3px 0 0}
+  .path-b{border-radius:0 0 3px 3px}
+  .sop-grid{grid-template-columns:1fr}
+  .section{padding:4rem 1.5rem}
+  .hero{min-height:90vh}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-badge">DOCUMENTARY REPORT</div>
+  <h1 class="hero-title">
+    つまずいても、<br><em>リスタート</em>できる<br>社会の設計図
+  </h1>
+  <p class="hero-sub">
+    頼る人が誰もいない若者への伴走型支援と、<br>企業経営における戦略的意義を問う
+  </p>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ═══ INTRO ═══ -->
+<div class="divider"><span></span></div>
+<section class="section reveal">
+  <div class="section-label">PROLOGUE ─ はじまり</div>
+  <h2 class="section-heading">
+    「甘えだ」と切り捨てられる<br>若者たちの、見えない傷
+  </h2>
+  <p class="section-body">
+    「すぐに仕事を辞めてしまう」「我慢が足りない」──。<br>
+    社会はしばしば、若者の離職を<strong>「本人の甘さ」</strong>という言葉で片付ける。<br><br>
+    しかし、その表面に見える現象の下には、幼少期からの虐待やトラウマ、無戸籍・無国籍による行政手続きの壁、頼れる大人の不在、住まいの不安定さ──<strong>複雑に絡み合った構造的課題</strong>が沈んでいる。<br><br>
+    個人の困難は、社会のシステム不全から生じている。<br>
+    精神論ではなく「環境の不備」として捉え直すこと。<br>
+    それが、最初のステップだ。
+  </p>
+</section>
+
+<!-- ═══ AGENDA IMAGE ═══ -->
+<div class="full-image-wrap reveal">
+  <img src="8_5_14.png" alt="若者が何度でもRESTARTできる社会へ：研修アジェンダ・ガイド" loading="lazy">
+  <div class="image-caption">研修アジェンダ全体像 ─ NotebookLM により構成</div>
+</div>
+
+<!-- ═══ QUOTE ═══ -->
+<div class="quote-block reveal">
+  <p class="quote-text">
+    この経験を「傷」ではなく、<br>
+    「社会を変える力」へ。<br>
+    だれもがきっかけひとつで<br>
+    いつでもREスタートできる社会を目指して。
+  </p>
+  <p class="quote-attr">── 一般社団法人コンパスナビ 代表理事 ブローハン 聡</p>
+</div>
+
+<!-- ═══ ORIGIN STORY ═══ -->
+<section class="section reveal">
+  <div class="section-label">CHAPTER 01 ─ 原体験</div>
+  <h2 class="section-heading">
+    0歳、無戸籍で生まれた<br>ひとりの子どもの物語
+  </h2>
+  <p class="section-body">
+    無戸籍・無国籍で出生。母ひとりに育てられ、<strong>4歳で義父からの虐待</strong>が始まる。他人の過ごす「家」と学校と地域の中で、声なきSOSを上げ続けた。<br><br>
+    11歳で児童養護施設に入所。声なきSOSを見逃さなかった先生がいた。14歳、母親が病気で亡くなる。そして<strong>18歳、施設を退所</strong>──いわゆる「18歳の壁」に直面する。<br><br>
+    社会的養護のもとを離れた瞬間、頼れる大人はゼロになる。住まいも、保証人も、相談相手も、すべてが自分で用意しなければならない。<br><br>
+    この「N=1」の原体験が、コンパスナビの活動の原点となった。
+  </p>
+</section>
+
+<!-- ═══ ICEBERG ═══ -->
+<section class="iceberg-section reveal">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="section-label">CHAPTER 02 ─ 構造的リスク</div>
+    <h2 class="section-heading">「18歳の壁」と<br>誤解される構造的リスク</h2>
+  </div>
+  <div class="iceberg-grid">
+    <div class="iceberg-surface">
+      <div class="iceberg-label">水面上の見え方（誤解）</div>
+      <ul class="iceberg-list">
+        <li>すぐに仕事を辞めてしまう</li>
+        <li>我慢が足りない</li>
+        <li>本人の甘さ</li>
+        <li>コミュニケーション能力の欠如</li>
+      </ul>
+    </div>
+    <div class="iceberg-deep">
+      <div class="iceberg-label">水面下の構造的課題</div>
+      <ul class="iceberg-list">
+        <li>虐待・トラウマのフラッシュバック</li>
+        <li>無戸籍・無国籍による行政手続きの壁</li>
+        <li>頼れる大人の不在（関係性の欠如）</li>
+        <li>住まいの不安定さ・経済的困窮</li>
+        <li>社会的孤立と自己肯定感の低下</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARADIGM SHIFT ═══ -->
+<section class="section reveal">
+  <div class="section-label">CHAPTER 03 ─ パラダイムシフト</div>
+  <h2 class="section-heading">就労は「ゴール」ではなく<br>「スタート」である</h2>
+  <p class="section-body">
+    従来の就労支援は、スキルを付与し、マッチングを行う<strong>「点」の支援</strong>だった。仕事さえ与えれば解決する、という前提に立っていた。<br><br>
+    しかし、地盤が緩い土地に建物を建てても倒壊する。生活基盤が不安定な若者に仕事だけを与えても、維持は困難だ。
+  </p>
+  <div class="paradigm">
+    <div class="paradigm-card paradigm-old">
+      <div class="paradigm-title">従来の就労支援</div>
+      <div class="paradigm-desc">スキル付与・マッチング（点）<br>「就職決定」がゴール<br>労働力の一次的な確保</div>
+    </div>
+    <div class="paradigm-arrow">→</div>
+    <div class="paradigm-card paradigm-new">
+      <div class="paradigm-title">コンパスナビの伴走型支援</div>
+      <div class="paradigm-desc">生活基盤の構築と継続的な関係性（線）<br>「職場への定着と自立」がスタート<br>N=1の支援がN=100の組織力へ</div>
+    </div>
+  </div>
+  <p class="section-body" style="margin-top:3rem">
+    食事、住まい、プロの眼差し（保護司など）による安心感があって初めて、就労は「定着」へと向かう。コンパスナビは、この<strong>「地盤改良」のプロセス</strong>を設計する。
+  </p>
+</section>
+
+<!-- ═══ VIDEO ═══ -->
+<section class="video-section reveal">
+  <div class="section-label">DOCUMENTARY ─ 映像記録</div>
+  <h2 class="section-heading">若者雇用と社労士の役割</h2>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="若者雇用_社労士の役割_small.mp4" type="video/mp4">
+      お使いのブラウザは動画再生に対応していません。
+    </video>
+  </div>
+  <div class="audio-wrap">
+    <div class="audio-label">音声のみで聴く（ポッドキャスト版）</div>
+    <audio controls preload="metadata">
+      <source src="若者雇用_社労士の役割_small.m4a" type="audio/mp4">
+    </audio>
+  </div>
+</section>
+
+<!-- ═══ RE-START BLUEPRINT PDF ═══ -->
+<section class="pdf-section reveal">
+  <div class="section-label">SLIDES ─ RE-Start Blueprint</div>
+  <h2 class="section-heading">つまずいてもリスタートできる社会の設計図</h2>
+  <div class="pdf-embed">
+    <iframe src="RE-Start_Blueprint.pdf" title="RE-Start Blueprint"></iframe>
+  </div>
+</section>
+
+<!-- ═══ 3 STRATEGIC VALUES ═══ -->
+<section class="section reveal">
+  <div class="section-label">CHAPTER 04 ─ 企業にとっての戦略的意義</div>
+  <h2 class="section-heading">福祉的な義務ではなく、<br>「人的資本経営」における重要な投資</h2>
+  <p class="section-body">
+    若者のリスタートを支えることは、企業にとっても明確な戦略的価値を持つ。採用・教育コストのサンクコスト最小化から、組織全体の心理的安全性向上まで──その意義は三つの柱で語られる。
+  </p>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">損失回避と定着</div>
+      <p class="pillar-text">採用・教育コストのサンクコストを最小化。背景を汲み取った環境調整により、中長期的な人的資本の安定を図る。</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">実効性のあるDE&I</div>
+      <p class="pillar-text">困難を抱える若者が定着できる組織は、全社員にとって「心理的安全性の高い職場」となり、組織全体のレジリエンスが向上する。</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">リスク管理の強化</div>
+      <p class="pillar-text">職場を社会的孤立を防ぐ「安心の拠点」と位置づけることで、メンタルヘルス不調や法的トラブルを未然に防ぐ民間セーフティネットとして機能。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ECOSYSTEM ═══ -->
+
+<!-- ═══ FOOD INFRASTRUCTURE HERO ═══ -->
+<section class="food-hero reveal">
+  <div class="food-hero-inner">
+    <div class="section-label" style="color:#d4a44a">CHAPTER 05 ─ 食のインフラ</div>
+    <h2 class="food-hero-title">
+      孤立を防ぐ、<em>命のベースキャンプ</em><br>
+      人的資本経営の根底を支える<br>「食のインフラ」という戦略
+    </h2>
+    <p class="food-hero-sub">
+      社会的孤立を打ち破る最強の武器。それは「温かいご飯」だった。<br>
+      コンパスナビ・高橋多佳子氏が実践する「ご飯づくり」は、<br>
+      単なる栄養補給ではない。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ WARM MEAL = STRONGEST BREAKWATER ═══ -->
+<section class="section reveal">
+  <h2 class="section-heading">
+    「温かいご飯」が、<br>最強の防波堤になる理由
+  </h2>
+  <p class="section-body">
+    温かい食事を共に囲むこと。それは<strong>「あなたを気にかけている人がここにいる」</strong>という、強烈な愛情と安全のメッセージだ。<br><br>
+    共に食べることで、無意識の警戒心と孤独感が解ける。「自分のために作ってくれた」という事実が、削られた自己肯定感を育む。職場での恐怖や不安を安全に吐き出せる<strong>「ベースキャンプ」</strong>が完成する。<br><br>
+    食を満たすことは、命を満たし、心を社会に繋ぐ第一歩なのだ。
+  </p>
+  <div class="food-flow">
+    <div class="food-step" style="background:rgba(212,164,74,.08);border-color:rgba(212,164,74,.3)">
+      <div class="food-step-num">STEP 01</div>
+      <div class="food-step-title" style="color:var(--ink)">食の共有</div>
+      <p class="food-step-text" style="color:var(--gray-warm)">共に食べることで、無意識の警戒心と孤独感が解ける。</p>
+    </div>
+    <div class="food-step" style="background:rgba(212,164,74,.08);border-color:rgba(212,164,74,.3)">
+      <div class="food-step-num">STEP 02</div>
+      <div class="food-step-title" style="color:var(--ink)">存在の承認</div>
+      <p class="food-step-text" style="color:var(--gray-warm)">「自分のために作ってくれた」という事実が、削られた自己肯定感を育む。</p>
+    </div>
+    <div class="food-step" style="background:rgba(212,164,74,.08);border-color:rgba(212,164,74,.3)">
+      <div class="food-step-num">STEP 03</div>
+      <div class="food-step-title" style="color:var(--ink)">心理的安全性の土台</div>
+      <p class="food-step-text" style="color:var(--gray-warm)">職場での恐怖や不安を安全に吐き出せる「ベースキャンプ」が完成する。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TWO PATHS ═══ -->
+<section class="path-section reveal">
+  <div class="section" style="padding-top:0;padding-bottom:2rem">
+    <div class="section-label">CHAPTER 05-2 ─ 二つの分岐</div>
+    <h2 class="section-heading">
+      なぜ「孤立」は離職を生み、<br>「食と繋がり」は定着を生むのか
+    </h2>
+    <p class="section-body">
+      職場でミスが発生し、怒られる恐怖に直面したとき──若者の前には二つの道が現れる。支援インフラの有無が、その分岐を決定する。
+    </p>
+  </div>
+  <div class="path-grid">
+    <div class="path-card path-a">
+      <div class="path-label">PATH A：孤立状態の連鎖</div>
+      <div class="path-title">誰にも相談できない</div>
+      <ul class="path-flow">
+        <li>職場でミス発生・怒られる恐怖</li>
+        <li>誰にも相談できない（親・居場所なし）</li>
+        <li>深刻なパニック状態</li>
+        <li>無断欠勤（バックレ）・早期離職</li>
+      </ul>
+    </div>
+    <div class="path-card path-b">
+      <div class="path-label">PATH B：食と伴走のインフラ</div>
+      <div class="path-title">支援拠点へ駆け込む</div>
+      <ul class="path-flow">
+        <li>職場でミス発生・怒られる恐怖</li>
+        <li>支援拠点へ駆け込む</li>
+        <li>温かいご飯を食べながら相談</li>
+        <li>感情の整理とリカバリー策の学習</li>
+        <li>職場へ復帰・定着</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3-TIER PYRAMID ═══ -->
+<section class="pyramid-section reveal">
+  <div class="section-label">CHAPTER 05-3 ─ 三つの階層</div>
+  <h2 class="section-heading">持続可能な就労を実現する<br>「3つの階層」</h2>
+  <p style="font-size:.95rem;color:rgba(255,255,255,.6);max-width:700px;margin:0 auto 2rem;line-height:2;text-align:center">
+    根底にある「食（安心できる土台）」が抜け落ちれば、<br>
+    どんなに優れた人事制度やDE&I施策も、砂上の楼閣に過ぎない。
+  </p>
+  <div class="pyramid">
+    <div class="pyramid-tier">
+      <div class="pyramid-tier-label">TOP TIER</div>
+      <div class="pyramid-tier-name">就労・キャリア</div>
+      <div class="pyramid-tier-desc">制度の柔軟な運用・SOP化・戦力化</div>
+    </div>
+    <div class="pyramid-tier">
+      <div class="pyramid-tier-label">MIDDLE TIER</div>
+      <div class="pyramid-tier-name">住居と相談</div>
+      <div class="pyramid-tier-desc">24時間365日の防波堤・パニック時の駆け込み寺</div>
+    </div>
+    <div class="pyramid-tier">
+      <div class="pyramid-tier-label">BASE TIER</div>
+      <div class="pyramid-tier-name">食のインフラ</div>
+      <div class="pyramid-tier-desc">【安心の土台】存在の承認・他者への信頼回復</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOP / TRANSLATION ═══ -->
+
+<!-- ═══ FOOD INFRASTRUCTURE PDF ═══ -->
+<section class="pdf-section dark-bg reveal">
+  <div class="pdf-inner">
+    <div class="section-label">SLIDES ─ 命のベースキャンプ</div>
+    <h2 class="section-heading">孤立を防ぐ、命のベースキャンプ<br>「食のインフラ」という戦略</h2>
+    <div class="pdf-embed">
+      <iframe src="Human_Capital_Food_Infrastructure.pdf" title="食のインフラ"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOP / TRANSLATION ═══ -->
+<section class="sop-section reveal">
+  <div class="section" style="padding-top:0;padding-bottom:0">
+    <div class="section-label">CHAPTER 06 ─ 「翻訳」と「伴走」の実務</div>
+    <h2 class="section-heading">
+      企業に求められる<br>「翻訳」と「伴走」の実務
+    </h2>
+    <p class="section-body">
+      「見て盗め」の昭和的教育は通用しない。企業のルールを若者の特性に合わせて「翻訳」することが、真のDE&I（包摂性）である。
+    </p>
+  </div>
+  <div class="sop-grid">
+    <div class="sop-card">
+      <div class="sop-num">PRACTICE 01</div>
+      <div class="sop-title">業務指示のSOP化</div>
+      <p class="sop-text">「適宜」「なるべく早く」などの曖昧な表現を排除し、視覚化された具体的マニュアルを作成。</p>
+    </div>
+    <div class="sop-card">
+      <div class="sop-num">PRACTICE 02</div>
+      <div class="sop-title">評価の柔軟化</div>
+      <p class="sop-text">成果だけでなく、報告の有無などスモールステップでの加点評価で自己肯定感を維持。</p>
+    </div>
+    <div class="sop-card">
+      <div class="sop-num">PRACTICE 03</div>
+      <div class="sop-title">既存制度のクリエイティブな運用</div>
+      <p class="sop-text">試用期間の戦略的延長や、メンタル不調時の私傷病休職の柔軟な準用による「猶予」の設計。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INFOGRAPHIC IMAGE ═══ -->
+<div class="divider"><span></span></div>
+<div class="full-image-wrap reveal" style="padding-bottom:4rem">
+  <img src="syoku_infura.png" alt="若者の生きづらさを組織の強みへ：社労士が導く構造的困難の解消と就労定着の指針" loading="lazy">
+  <div class="image-caption">インフォグラフィック ─ 社労士が導く構造的困難の解消と就労定着の指針</div>
+</div>
+
+<!-- ═══ ECOSYSTEM ═══ -->
+<section class="ecosystem reveal">
+  <div class="section" style="padding-top:0">
+    <div class="section-label">CHAPTER 07 ─ エコシステムの設計者</div>
+    <h2 class="section-heading">
+      社労士は「制度の運用者」ではない。<br>リスタート可能な社会を<br>実装するキーパーソンだ。
+    </h2>
+    <p class="section-body">
+      若者の特性と企業の求める業務をつなぐ<strong>「橋渡し役」</strong>。コンパスナビ等の外部リソースを企業に導入し、伴走型の受け入れ体制をデザインする<strong>「設計者」</strong>。<br><br>
+      業務の切り出しや言語化を行い、若者と企業の「通訳」であり「架け橋」を目指す。社労士の皆様は、単なる制度の運用者ではない──<strong>リスタート可能な社会を実装するキーパーソン</strong>である。
+    </p>
+    <div class="eco-triangle">
+      <div class="eco-node eco-top">企業</div><br>
+      <div class="eco-center">⊿ 社労士</div>
+      <div class="eco-node eco-left">若者</div>
+      <div class="eco-node eco-right">コンパスナビ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section reveal">
+  <h2 class="cta-heading">誰もが何度でも、<br>今日からやり直せる社会へ。</h2>
+  <p class="cta-sub">
+    共に、新しい社会のインフラを築いていきましょう。<br>
+    若者を「助けられる人」ではなく、<br>共に社会を創る「担い手」として受け入れる設計を。
+  </p>
+  <div class="cta-org">
+    コンパスナビ®<br>
+    <small>一般社団法人コンパスナビ ／ 埼玉県社会保険労務士会熊谷支部</small>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 一般社団法人コンパスナビ × kenjispark AI士業ラボ ─ RE-Start Blueprint</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
